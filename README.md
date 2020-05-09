@@ -1,6 +1,6 @@
 # mentorio
 
-A new Flutter application.
+A Flutter application using Firebase
 
 ## Getting Started
 

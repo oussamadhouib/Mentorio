@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "108985185789",
+    "firebase_url": "https://mentorio-app.firebaseio.com",
+    "project_id": "mentorio-app",
+    "storage_bucket": "mentorio-app.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:108985185789:android:8b499a6fafe7138ca85594",
+        "android_client_info": {
+          "package_name": "com.example.mentorio"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "108985185789-0vfvv0897oic5lg7480ck7ovrqiuldqb.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDcHH2S4d5JnUZpJkPZKK6wLS6cY66EGFE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "108985185789-0vfvv0897oic5lg7480ck7ovrqiuldqb.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
