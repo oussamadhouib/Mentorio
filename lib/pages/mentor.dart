@@ -1,9 +1,10 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
+
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-//import 'package:commons/commons.dart';
+
 
 
 
@@ -96,7 +97,11 @@ class _MentorState extends State<Mentor> {
     // TODO: implement build
     return Scaffold(
       appBar: AppBar(
-        title: Text('Mentor'),
+        elevation: 0,
+        brightness: Brightness.light, // this makes status bar text color black
+        backgroundColor: Colors.transparent,
+        title: Text('Mento Space',style: new TextStyle(fontSize: 20.0, color: Colors.black)),
+
         actions: <Widget>[
 
         ],
@@ -239,14 +244,7 @@ class _MentorState extends State<Mentor> {
                                     'email':currentUser.email,
                                   }
                                 });
-                                /*successDialog( 
-                                context,  
-                                "Thank you for your submission, We will contact you as soon as possible",  
-                                negativeText: "Try Again",  
-                                negativeAction: () {},  
-                                positiveText: "Details",  
-                                positiveAction: () {},  
-                              );*/
+                             
                               }
                              
                             

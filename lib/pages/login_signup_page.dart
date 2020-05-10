@@ -123,13 +123,17 @@ class _LoginSignupPageState extends State<LoginSignupPage> {
   Widget build(BuildContext context) {
     return new Scaffold(
         appBar: new AppBar(
-          title: new Text('Mentorio Tunisia'),
+           elevation: 0,
+           brightness: Brightness.light, // this makes status bar text color black
+           backgroundColor: Colors.transparent,
+          title: Text('Mentorio Tunisia',style: new TextStyle(fontSize: 20.0, color: Colors.black)),
+
         ),
+        
         body: Stack(
           children: <Widget>[
             _showForm(),
             _showCircularProgress(),
-          
           ],
         ));
   }

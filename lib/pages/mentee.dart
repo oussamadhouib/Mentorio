@@ -1,5 +1,5 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
-//import 'package:commons/commons.dart';
+
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter/material.dart';
@@ -96,12 +96,17 @@ class _MenteeState extends State<Mentee> {
     // TODO: implement build
     return Scaffold(
       appBar: AppBar(
-        title: Text('Mentee'),
+        elevation: 0,
+        brightness: Brightness.light, // this makes status bar text color black
+        backgroundColor: Colors.transparent,
+        title: Text('Mentee Space',style: new TextStyle(fontSize: 20.0, color: Colors.black)),
+
         actions: <Widget>[
 
         ],
       ),
       body: Container(
+      
         padding: EdgeInsets.all(16),
         child: Form(
           key: _formkey,
@@ -239,14 +244,7 @@ class _MenteeState extends State<Mentee> {
                                     'email':currentUser.email,
                                   }
                                 });
-                                /*successDialog( 
-                                context,  
-                                "Thank you for your submission, We will contact you as soon as possible",  
-                                negativeText: "Try Again",  
-                                negativeAction: () {},  
-                                positiveText: "Details",  
-                                positiveAction: () {},  
-                                );*/
+                               
                               }
                              
                             

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:mentorio/pages/mentee.dart';
 import 'package:mentorio/pages/mentor.dart';
 import 'package:mentorio/services/authentication.dart';
@@ -208,14 +209,18 @@ class _HomePageState extends State<HomePage> {
 
   @override
   Widget build(BuildContext context) {
-
+    
+  
     return Scaffold(
       appBar: AppBar(
-        title: Text('Mentorio Tunisia'),
+        elevation: 0,
+        brightness: Brightness.light, // this makes status bar text color black
+        backgroundColor: Colors.transparent,
+        title: Text('Mentorio Tunisia',style: new TextStyle(fontSize: 20.0, color: Colors.black)),
         actions: <Widget>[
           new FlatButton(
               child: new Text('Logout',
-                  style: new TextStyle(fontSize: 20.0, color: Colors.white)),
+                  style: new TextStyle(fontSize: 20.0, color: Colors.black)),
               onPressed: signOut)
         ],
       ),
