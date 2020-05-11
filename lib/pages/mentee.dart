@@ -102,6 +102,33 @@ class _MenteeState extends State<Mentee> {
         title: Text('Mentee Space',style: new TextStyle(fontSize: 20.0, color: Colors.black)),
 
         actions: <Widget>[
+          IconButton(
+              icon: Icon(
+                Icons.notification_important,
+                color: Colors.black,
+              ),
+              onPressed: () {
+                // do something
+              },
+            ),
+              IconButton(
+              icon: Icon(
+                Icons.home,
+                color: Colors.black,
+              ),
+              onPressed: () {
+                // do something
+              },
+            ),
+             IconButton(
+              icon: Icon(
+                Icons.account_circle,
+                color: Colors.black,
+              ),
+              onPressed: () {
+                // do something
+              },
+            )
 
         ],
       ),

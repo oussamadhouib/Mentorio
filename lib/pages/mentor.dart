@@ -1,9 +1,12 @@
+//import 'dart:js';
+
 import 'package:cloud_firestore/cloud_firestore.dart';
 
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+
 
 
 
@@ -100,9 +103,36 @@ class _MentorState extends State<Mentor> {
         elevation: 0,
         brightness: Brightness.light, // this makes status bar text color black
         backgroundColor: Colors.transparent,
-        title: Text('Mento Space',style: new TextStyle(fontSize: 20.0, color: Colors.black)),
+        title: Text('Mentor Space',style: new TextStyle(fontSize: 20.0, color: Colors.black)),
 
         actions: <Widget>[
+           IconButton(
+              icon: Icon(
+                Icons.notification_important,
+                color: Colors.black,
+              ),
+              onPressed: () {
+                // do something
+              },
+            ),
+            IconButton(
+              icon: Icon(
+                Icons.home,
+                color: Colors.black,
+              ),
+              onPressed: () {
+                // do something
+              },
+            ),
+             IconButton(
+              icon: Icon(
+                Icons.account_circle
+               // color: Colors.black,
+              ),
+              onPressed: () {
+                // do something
+              },
+            )
 
         ],
       ),
@@ -122,9 +152,7 @@ class _MentorState extends State<Mentor> {
                         crossAxisAlignment: CrossAxisAlignment.center,
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: <Widget>[
-                          SizedBox(
-                            height: 5,
-                          ),
+                          
                           _title(),
                           SizedBox(
                             height: 20,
@@ -244,8 +272,10 @@ class _MentorState extends State<Mentor> {
                                     'email':currentUser.email,
                                   }
                                 });
-                             
+                                //return Alert(context: context, title: "rflutter_alert").show();
+
                               }
+                              
                              
                             
 
