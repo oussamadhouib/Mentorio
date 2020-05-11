@@ -1,4 +1,3 @@
-//import 'dart:js';
 
 import 'package:cloud_firestore/cloud_firestore.dart';
 
@@ -6,6 +5,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:mentorio/pages/home_page.dart';
 
 
 
@@ -71,6 +71,60 @@ class _MentorState extends State<Mentor> {
     });
   }
 
+showAlertDialog(BuildContext context) {
+
+  // set up the button
+  Widget okButton = FlatButton(
+    child: Text("OK"),
+    onPressed: () {
+      Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => HomePage()),
+       );
+     },
+  );
+
+  // set up the AlertDialog
+  AlertDialog alert = AlertDialog(
+    title: Text("Success"),
+    content: Text("Thanks for your submission,you will be answered soon."),
+    actions: [
+      okButton,
+    ],
+  );
+
+  // show the dialog
+  showDialog(
+    context: context,
+    builder: (BuildContext context) {
+      return alert;
+    },
+  );
+}
+
+
+//loading function
+ void _onLoading() {
+  showDialog(
+    context: context,
+    barrierDismissible: false,
+    builder: (BuildContext context) {
+      return Dialog(
+        child: new Row(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            new CircularProgressIndicator(),
+            new Text("Loading"),
+          ],
+        ),
+      );
+    },
+  );
+  new Future.delayed(new Duration(seconds: 4), () {
+    Navigator.pop(context); //pop dialog
+    showAlertDialog(context);
+  });
+}
 
   Widget _title() {
     return RichText(
@@ -97,7 +151,7 @@ class _MentorState extends State<Mentor> {
   }
   @override
   Widget build(BuildContext context) {
-    // TODO: implement build
+   
     return Scaffold(
       appBar: AppBar(
         elevation: 0,
@@ -272,13 +326,13 @@ class _MentorState extends State<Mentor> {
                                     'email':currentUser.email,
                                   }
                                 });
-                                //return Alert(context: context, title: "rflutter_alert").show();
+              
+                               _onLoading();
+                                
 
                               }
                               
-                             
                             
-
                              /* Navigator.push(
                                 context,
                                 MaterialPageRoute(builder: (context) => Dashboard()),

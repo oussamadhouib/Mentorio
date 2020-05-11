@@ -5,6 +5,8 @@ import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
+import 'home_page.dart';
+
 
 
 class Mentee extends StatefulWidget{
@@ -66,6 +68,60 @@ class _MenteeState extends State<Mentee> {
       print('record updated successflly');
     });
   }
+
+showAlertDialog(BuildContext context) {
+
+  // set up the button
+  Widget okButton = FlatButton(
+    child: Text("OK"),
+    onPressed: () { 
+       Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => HomePage()),
+       );
+    },
+  );
+
+  // set up the AlertDialog
+  AlertDialog alert = AlertDialog(
+    title: Text("Success"),
+    content: Text("Thanks for your submission,you will be answered soon."),
+    actions: [
+      okButton,
+    ],
+  );
+
+  // show the dialog
+  showDialog(
+    context: context,
+    builder: (BuildContext context) {
+      return alert;
+    },
+  );
+}
+
+//loading function 
+ void _onLoading() {
+  showDialog(
+    context: context,
+    barrierDismissible: false,
+    builder: (BuildContext context) {
+      return Dialog(
+        child: new Row(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            new CircularProgressIndicator(),
+            new Text("Loading"),
+          ],
+        ),
+      );
+    },
+  );
+  new Future.delayed(new Duration(seconds: 4), () {
+    Navigator.pop(context); //pop dialog
+    showAlertDialog(context);
+  });
+}
 
 
   Widget _title() {
@@ -271,6 +327,8 @@ class _MenteeState extends State<Mentee> {
                                     'email':currentUser.email,
                                   }
                                 });
+
+                                _onLoading();
                                
                               }
                              
