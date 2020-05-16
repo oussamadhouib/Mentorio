@@ -162,13 +162,13 @@ class _LoginSignupPageState extends State<LoginSignupPage> {
           mainAxisSize: MainAxisSize.min,
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            Image(image: AssetImage("assets/google_logo.png"), height: 35.0),
+            Image(image: AssetImage("assets/google_logo.png"), height: 30.0),
             Padding(
               padding: const EdgeInsets.only(left: 10),
               child: Text(
                 'Sign in with Google',
                 style: TextStyle(
-                  fontSize: 20,
+                  fontSize: 15,
                   color: Colors.grey,
                 ),
               ),
@@ -208,7 +208,7 @@ class _LoginSignupPageState extends State<LoginSignupPage> {
               showSecondaryButton(),
               showErrorMessage(),
               SizedBox(
-                 height: 30,
+                 height: 8,
               ),
               _signInButton(),
              
@@ -238,7 +238,7 @@ class _LoginSignupPageState extends State<LoginSignupPage> {
     return new Hero(
       tag: 'hero',
       child: Padding(
-        padding: EdgeInsets.fromLTRB(0.0, 70.0, 0.0, 0.0),
+        padding: EdgeInsets.fromLTRB(0.0, 50.0, 0.0, 0.0),
         child: CircleAvatar(
           backgroundColor: Colors.transparent,
           radius: 48.0,
@@ -296,7 +296,7 @@ class _LoginSignupPageState extends State<LoginSignupPage> {
 
   Widget showPrimaryButton() {
     return new Padding(
-        padding: EdgeInsets.fromLTRB(0.0, 45.0, 0.0, 0.0),
+        padding: EdgeInsets.fromLTRB(45, 45.0, 45, 0),
         child: SizedBox(
           height: 40.0,
           child: new RaisedButton(

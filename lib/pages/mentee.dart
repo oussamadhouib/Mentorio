@@ -6,6 +6,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 import 'home_page.dart';
+import 'mentorHome.dart';
 
 
 
@@ -173,6 +174,10 @@ showAlertDialog(BuildContext context) {
                 color: Colors.black,
               ),
               onPressed: () {
+                 Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => mentorHome()),
+              );
                 // do something
               },
             ),

@@ -6,10 +6,7 @@ import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:mentorio/pages/home_page.dart';
-
-
-
-
+import 'package:mentorio/pages/mentorHome.dart';
 
 class Mentor extends StatefulWidget{
   @override
@@ -175,6 +172,10 @@ showAlertDialog(BuildContext context) {
                 color: Colors.black,
               ),
               onPressed: () {
+                Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => mentorHome()),
+              );
                 // do something
               },
             ),
